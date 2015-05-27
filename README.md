@@ -4,7 +4,7 @@
 
 - checkout this repository
 - $ bundle install
-- $ ruby sinatra.rb
+- $ ruby server.rb
 
 There will now be a server running on localhost:4567
 
