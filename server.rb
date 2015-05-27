@@ -10,8 +10,9 @@ end
 
 get '/countries' do
   term = params['term']
+  puts params
   if term 
-    json `grep #{term} countries.json`.split("\n").take(20)
+    json `grep #{term} countries.txt`.split("\n").take(20)
   else 
     json []
   end
