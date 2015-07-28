@@ -5,5 +5,21 @@
   <script src="http://code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
 </head>
 <body>
+  <input id='countries' />
+  <div id='results'></div>
 </body>
+<script>
+  $('#countries').keyup( function(event) {
+    $.ajax({
+      url: "/countries?term=" + $('#countries').val(),
+      context: document.body
+    }).done(function(result) {
+      var str = "";
+      for(var i = 0; i < result.length; i++ ) {
+        str += "<li>" + result[i];
+      }
+      $('#results').html(str);
+    });
+  });
+</script>
 </html>
